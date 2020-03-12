@@ -1,0 +1,363 @@
+@import url('common.css');
+
+#total{
+    width: 1920px;
+    height: 3162px;
+    margin: 0 auto;
+    background: #f6f6f6;
+    position: relative;
+}
+#header{
+    position: relative;
+    width: 1920px;
+    height: 210px;
+}
+#header .logo img{
+    width: 234px;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 90px;
+    margin-left: 150px;
+    cursor: pointer;
+}
+#header .menu{
+    width: 88px;
+    height: 53px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 90px;
+    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+#header .menu span{
+    width: 88px;
+    height: 9px;
+    background: #333;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+#content{
+    position: relative;
+    width: 1920px;
+    height: 2771px;
+}
+#content h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 128px;
+    margin-left: 150px;
+    font-size: 60px;
+    color: #333;
+    font-weight: bold;
+}
+#content p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 259px;
+    margin-left: 150px;
+    font-size: 42px;
+    color: #333;
+}
+#content .nav{
+    width: 1354px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 513px;
+    margin-left: 299px;
+    display: flex;
+    justify-content: space-between;
+}
+#content .nav a{
+    font-size: 51px;
+    color: #333;
+    font-weight: bold;
+}
+#content .nav:after {
+    content: '';
+    width: 198px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:80px;
+    margin-left: 0px;
+    z-index: 2;
+}
+
+#content .line01 ul{
+    width: 1515px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 676px;
+    margin-left: 186px;
+}
+#content .line02 ul{
+    width: 1515px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 1339px;
+    margin-left: 186px;
+}
+#content .line03 ul{
+    width: 1515px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 2001px;
+    margin-left: 186px;
+}
+#content ul li{
+    width: 440px;
+    height: 600px;
+    background:#fff;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#content ul div:nth-child(1) img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 150px;
+    margin-left: 69px;
+    z-index: 3;
+}
+#content ul div:nth-child(2) img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 150px;
+    margin-left: 607px;
+    z-index: 3;
+}
+#content ul div:nth-child(3) img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 150px;
+    margin-left: 1144px;
+    z-index: 3;
+}
+#content span{
+    font-size: 22px;
+    color: #666;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 60px;
+    margin-left: 24px;
+}
+#content strong{
+    font-size: 40px;
+    color:#333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 94px;
+    margin-left: 24px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+}
+
+
+
+/*박스 뒤 컬러배경 관련*/
+
+
+
+#content .line01 div:nth-child(1) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(238,179,119,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line01 div:nth-child(2) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(227,250,56,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line01 div:nth-child(3) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(143,6,21,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+
+#content .line02 div:nth-child(1) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(231,205,198,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line02 div:nth-child(2) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(42,57,117,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line02 div:nth-child(3) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(221,126,111,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+
+#content .line03 div:nth-child(1) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(135,159,183,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line03 div:nth-child(2) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(229,72,66,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+#content .line03 div:nth-child(3) li:after{
+    content: '';
+    width: 490px;
+    height: 490px;
+    border-radius: 100%;
+    background: rgba(67,71,99,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:284px;
+    margin-left:198px;
+    z-index: 2;
+}
+
+
+/* 박스 뒤 배경관련 끝*/
+
+
+
+
+#content ul li span:before{
+    content: '';
+    width: 45px;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 115px;
+    margin-left: 0px;
+}
+#content ul li span:after{
+    content: '';
+    width: 19px;
+    height: 2px;
+    background: #333;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 108px;
+    margin-left: 29px;
+}
+
+#footer{
+    width: 1920px;
+    height: 182px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom:67px;
+    margin-left:-562px;
+}
+#footer .sns{
+    width: 1124px;
+    display: flex;
+    justify-content: space-between;
+}
+#footer .sns a{
+    font-size: 45px;
+    color:#333;
+}
+#footer p{
+    font-size: 45px;
+    color:#999;
+    margin-left:50px;
+    margin-top:20px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+            }
+            article {
+                width: 600px;
+                display: flex;
+                flex-direction: column;
+            }
+            .box {
+                width: 280px;
+                height: 300px;
+                margin: 10px auto 0 0;
+                background: #eee;
+                transition: 3s;
+            }
+            .change {
+                background: #0f0;
+            }
+        </style>
+        <article>
+            <!-- <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box change"></div>
+            <div class="box change"></div>
+            <div class="box change"></div>
+            <div class="box change"></div> -->
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box change"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </article>
+        <script>
+            var scroll = 0,
+                lastScroll = 0;
+            window.addEventListener("scroll", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                scroll = window.scrollY; /* 스크롤 값 */
+                if (scroll > lastScroll) {
+                    if (scrollY >= 0) {
+                        var scrollto = setInterval(function() {
+                            window.scrollTo(0, scroll);
+                            if (scroll < 950) {
+                                scroll += 1;
+                            } else {
+                                clearInterval(scrollto);
+                            }
+                        }, 20);
+                    }
+                } else {
+                    if (scrollY >= 0) {
+                        var scrollto = setInterval(function() {
+                            window.scrollTo(0, scroll);
+                            if (scroll > 1) {
+                                scroll -= 1;
+                            } else {
+                                clearInterval(scrollto);
+                            }
+                        }, 20);
+                    }
+                }
+                lastScroll = scroll;
+            });
+        </script>
+    </body>
+</html>

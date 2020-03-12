@@ -1,0 +1,72 @@
+@import url('common.css');
+#total{
+    width: 900px;
+    margin:0 auto;
+    padding: 60px;
+}
+#total h2{
+    font-size: 2em;
+    text-align: center;
+    margin-top: 82px;
+}
+
+#total .p_all{
+    border: 10px solid #000;
+    width: 760px;
+    height: 487px;
+    margin: 54px auto;
+    padding: 50px;
+}
+#total .p_all h3{
+    font-size: 1.6em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+#total .p_all h3 small{
+    font-weight: normal;
+    margin-top: 20px;
+    line-height: 3;
+}
+#total .p_all form{}
+#total .p_all dl{
+    width:636px;
+    padding: 10px;
+    border: 2px solid #333;
+}
+#total .p_all dl dt{
+    padding: 5px 0;
+    padding-bottom: 15px;
+}
+#total .p_all dl dd:before{
+    content: '';
+    display: inline-block;
+    width:20px;
+    height: 10px;
+    background: url(../images/down.png) no-repeat center;
+}
+#total .p_all dl dd{
+    border-top: 2px solid #ddd;
+    padding: 20px 0;
+    position: relative;
+}
+#total .p_all dl dd em{
+    font-style: normal;
+    color: #f00;
+}
+#total .p_all dl dd input{
+    position: absolute;
+    right:0;
+    top: 14px;
+}
+
+#total .p_all div{
+    text-align: center;
+}
+#total .p_all > form > div input{
+    width: 85px;
+    height: 35px;
+    color: #fff;
+    background: #aaa;
+    border: none;
+    margin-top: 20px;
+}

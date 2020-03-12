@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <article class="ex">
+            <h2>DOM - 데이터 값 변경</h2>
+            <div>
+                <input class="img-src" type="text" list="src-txt" />
+
+                <data-list id="src-txt">
+                    <option>01.jpg</option>
+                    <option>02.jpg</option>
+                    <option>03.jpg</option>
+                </data-list>
+
+                <input class="change-btn" type="button" value="변경" />
+            </div>
+            <div>
+                <img src="imgaes/01.jpg" alt="" />
+            </div>
+        </article>
+
+        <script>
+            var changeBtn = document.querySelector(".change-btn");
+            changeBtn.onclick = function() {
+                var imgSrc = document.querySelector(".img-src");
+                var img = document.querySelector(".img");
+
+                img.src =
+            };
+        </script>
+    </body>
+</html>

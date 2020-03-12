@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    
+    var x = 3;
+     
+//  문자와 숫자가 결합 = 문자타입(string)
+    document.write("<br>"+(x+3));
+    document.write(x+3+"<br>");
+    /*'<div>'+01+'</div>'*/
+    
+    var y = '3';
+    //alert(typeof x != y); //Number
+    //alert(typeof y); //String
+    
+    
+    /*선언 값을 기록하는 공간 => 스코프
+    var x = 3;
+    var x;
+        x = 3;*/
+    
+    var x = null;
+    //document.write(x+"<br>");
+    //alert(x);
+    console.log(x+3);
+    
+    var z;
+    console.log(z+3);
+    
+    //Boolean    
+    document.write("<h1>Boolean</h1>");
+    x = 50;
+    y = 30;
+    var bln = x >= y; //false
+    document.write("<br>x =>"+x);
+    document.write("<br>y =>"+y);
+    document.write("<br>(x >= y) =>"+bln);
+    
+    
+    //Array(배열)
+    //var x = new Array();
+    document.write("<h1>Array(배열)</h1>");
+    var x = [];
+    x[0] = 3;
+    x[1] = 6;
+    x[2] = 9;
+    x[3] = 10;
+    x.push(11);
+    
+    document.write("<br>(x[0]=3) =>"+x[0]);
+    document.write("<br>(x[1]=6) =>"+x[1]);
+    document.write("<br>(x[2]=9) =>"+x[2]);
+    document.write("<br>(x[3]=10) =>"+x[3]);
+    document.write("<br>x =>"+x+"(여러개의 값을 처리할 수 있다.)");
+    
+    
+    //var x = new Object();
+    document.write("<h1>Object(객체)</h1>");
+    var x = {};
+    x["kor"] = 90;
+    x["eng"] = 100;
+    x["mth"] = 60;
+    x.sgn = 80;
+    x["s gn01"] = 80;
+    
+document.write(
+                "<br>var x = {};" +
+                "<br>x[kor] = 90;" +
+                "<br>x[eng] = 100;" +
+                "<br>x[mth] = 60;" +
+                "<br>x.sgn = 80;" +
+                "<br><br>x[s gn01] = 80;" +
+                "x =>{" +
+                    "kor:90," +
+                    "eng:100," +
+                    "mth:60," +
+                    "sgn:80," +
+                    "s gn01:80" +
+                "}"
+               );
+    
+    
+    /*
+        x = {
+            name : "홍길동",
+            kor : 90,
+            eng : 100,
+            mth : 60
+            total : function(){
+                return this.kor + this.eng + this.mth
+            }
+        };
+    */
+    /*{
+        color : '#f00, #0f0, #00f',
+        font : 'dotum',
+        overflow : 'skdjfksjfkdskdjfksjfk'
+    }*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    font-family: '';
+    font-size: 14px;
+}
+
+html,body 
+{
+    margin: 0px;
+}
+
+ul,li 
+{
+    list-style-type: none;
+}
+
+
+a
+{color: #96979d;
+text-decoration: none}
+
+span,em,strong,a
+{
+    display: inline-block;
+}

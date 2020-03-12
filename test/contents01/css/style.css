@@ -1,0 +1,204 @@
+@import url('common.css');
+
+body{position: relative}
+
+h1 {
+    font-size: 26px;
+    color: #333;
+    text-align: center;
+    margin-top: 90px
+}
+
+h1:after {
+    content: '';
+    width: 70px;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    margin-left: -35px;
+    margin-top: 51px;
+}
+
+#content {
+    position: relative;
+    width:1140px;
+    margin: 0 auto;
+}
+/*ul{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -570px;
+    margin-top: 134px;
+    font-size: 0;
+}
+
+li {
+    width: 360px;
+    display: inline-block;
+    margin-right: 30px;
+    position: relative;
+    vertical-align: top;
+}
+.li03{
+    margin-right:0px;  inlineblock방식->flex방식으로 변경함*/
+
+#content ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 131px;
+}
+
+#content ul li{
+    width: 360px;
+    position: relative;
+}
+
+#content li .box img {
+    border-radius: 10px;
+    width: 360px;
+    height: 200px;
+}
+#content li div.box:after{
+    content: '';
+    width: 360px;
+    height: 200px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:20;
+    transition:0.5s;
+}
+
+#content div.box:hover:after {
+      background: rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition:0.5s;
+}
+
+#content li .icon1:before{
+    content: '';
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.3) url("../images/search.png") no-repeat; z-index: 30;
+    opacity:0%;
+    background-position: center;
+    position: absolute;
+    top: 84px;
+    left: 147px;
+    cursor: pointer;
+    transition:0.5s;
+}
+#content li .icon2:before{
+    content: '';
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.3) url("../images/popup.png") no-repeat; z-index: 40;
+    opacity:0;
+    background-position: center;
+    position: absolute;
+    top: 84px;
+    left: 181px;
+    cursor: pointer;
+    transition:0.5s;
+}
+
+#content .box:hover a:before {
+    opacity: 1;
+    transition:0.5s;
+}
+
+#content strong {
+    margin-top: 30px;
+    font-size: 15px;
+    color: #333;
+}
+
+#content ul .text{
+    margin-top: 30px;
+}
+
+#content em {
+    margin-top: 23px;
+    font-weight: bold
+}
+
+#content li div.box:before {
+    content: '';
+    width: 65px;
+    height: 65px;
+    color: #ffffff;
+    background: #e45914;
+    text-align: center;
+    line-height: 65px;
+    position: absolute;
+    border-radius: 10px 0 10px 0;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    display: block;
+    clear: both;
+}
+#content li .month{
+color: #ffffff;
+    font-size: 20px;
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    z-index: 10;
+    text-shadow: 2px 2px 2px #aaa;
+    
+}
+#content li .day{
+    color: #ffffff;
+    font-size: 15px;
+    position: absolute;
+    top: 35px;
+    left: 18px;
+    z-index: 10;
+    opacity: 60%;
+    text-shadow: 2px 2px 2px gray;
+    
+}
+.button p {
+    width: 224px;
+    height: 49px;
+    border: 2px solid #000000;
+    border-radius: 30px;
+    color: #333;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 49px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -112px;
+    margin-top: 638px;
+}
+
+.button:hover{
+    cursor: pointer
+}
+
+/*참고용
+#content .icon{margin:0 auto;}
+
+#content .icon a{ width:30px;height:30px;
+
+        background:#000 url('../img/icon.png') no-repeat; opacity:30%;z-index: 5}
+
+#content .icon a:first-child{
+
+        background-position: 5px center;}
+
+#content .icon a:last-child{
+
+        background-position: -27px center;}*/

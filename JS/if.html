@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+</div>  
+    <script>
+            alert("당신이 한마리의 야생동물이 된다면? 사자/기린/코끼리/얼룩말");
+            var i = prompt("사자? (네/아니오)");
+
+            if(i == "네") { document.write("<h1>사자를 선택한 당신</h1>");
+            document.write("<br>경쟁심이 약한 편이라 남의 것을 탐하지 않는 성격입니다.");
+            document.write("<br>항상 현 상황이 지속되기를 원하며, 인내심이 강합니다.");
+            document.write("<br>강해보지만 평화적이고 여린 마음을 지니고 있는 타입입니다.");}
+            else if( i == "아니오")
+            { var i = prompt("기린? (네/아니오)"); 
+            if(i == "네") { document.write("<h1>기린을 선택한 당신</h1>");
+            document.write("<br>경쟁심이 강하고 꼼꼼하며 신중한 성격입니다.");
+            document.write("<br>분석력도 좋은 편이라 상대의 성향 파악이 빠르고 경쟁을 즐기는 타입입니다.");}
+            else if( i == "아니오"){
+            var i = prompt("코끼리? (네/아니오)"); 
+            if(i == "네") { document.write("<h1>코끼리를 선택한 당신</h1>");
+            document.write("<br>자신에 대한 자부심이 강하고 자신을 사랑할 줄 아는 성격입니다.");
+            document.write("<br>남의 것을 탐하고 질투하기 보다는 자신을 아끼고 사랑하는 자기애가 강한 타입입니다.");}            
+            else if( i == "아니오"){ 
+            var i = prompt("얼룩말? (네/아니오)"); 
+            if(i == "네") { document.write("<h1>얼룩말을 선택한 당신</h1>");
+            document.write("<br>주도적이며 추진력이 강한 성격입니다.");
+            document.write("<br>앞만 보고 달리다 보니 주변에 소홀해져 이기적으로 비춰질 수 있습니다.");
+            document.write("<br>추진력이 강하고 일처리가 확실한 타입입니다.");}}}}
+            
+            else{alert("다시 입력해주세요.");}
+
+    </script>
+</body>
+</html>

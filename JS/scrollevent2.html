@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            body {
+                margin: 0;
+            }
+            article {
+                width: 600px;
+                display: flex;
+                flex-direction: column;
+            }
+            .box {
+                width: 280px;
+                height: 300px;
+                margin: 10px auto 0 0;
+                background: #eee;
+                transition: 3s;
+            }
+            .change {
+                background: #0f0;
+            }
+        </style>
+        <article>
+            <!-- <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box change"></div>
+            <div class="box change"></div>
+            <div class="box change"></div>
+            <div class="box change"></div> -->
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box change"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </article>
+        <script>
+            // var win_height = window.innerHeight; /* 윈도우의 높이 */
+            // var box = document.querySelectorAll(".change");
+
+            // window.addEventListener("scroll", function() {
+            //     var scrollY = (window.scrollY / 1700) * 100; /* 스크롤 값 */
+            //     console.log(scrollY);
+            //     if (scrollY >= 40) {
+            //         box[0].style.margin = 10 + "px" + " auto 0 0";
+            //     } else {
+            //         box[0].style.margin = 400 + "px" + " auto 0 0";
+            //     }
+            //     if (scrollY >= 60) {
+            //         box[1].style.margin = 10 + "px" + " auto 0 0";
+            //     } else {
+            //         box[1].style.margin = 400 + "px" + " auto 0 0";
+            //     }
+            //     if (scrollY >= 80) {
+            //         box[2].style.margin = 10 + "px" + " auto 0 0";
+            //     } else {
+            //         box[2].style.margin = 400 + "px" + " auto 0 0";
+            //     }
+            //     if (scrollY >= 90) {
+            //         box[3].style.margin = 10 + "px" + " auto 0 0";
+            //     } else {
+            //         box[3].style.margin = 400 + "px" + " auto 0 0";
+            //     }
+            // });
+            var scroll = 0,
+                lastScroll = 0,
+                bln = true;
+            var win_height = document.documentElement.offsetHeight; /* 윈도우의 높이 */
+            console.log(win_height);
+
+            var a = 0,
+                b = 0;
+            var scrollto = null;
+            window.addEventListener("scroll", function() {
+                //console.log(++a)
+                scroll = window.scrollY;
+
+                a += 1 / 30;
+                console.log(a + "a값");
+                if (a < 1) {
+                    bln = false;
+                }
+                if (a > 1) {
+                    bln = true;
+                    clearInterval(scrollto);
+                    a = 0;
+
+                    console.log(a + "마지막");
+                }
+
+                if (bln) {
+                    aa = scroll + 200;
+                    bln = false;
+
+                    console.log(++a);
+                    if (scroll > lastScroll) {
+                        if (scroll > 0) {
+                            scrollto = setInterval(function() {
+                                window.scrollTo(0, scroll);
+
+                                if (scroll < aa) {
+                                    scroll += 1;
+                                    console.log("aaaaa" + scroll);
+                                } else {
+                                    clearInterval(scrollto);
+                                }
+                            }, 10);
+                        }
+                    } else {
+                        bln = true;
+                        if (scroll > 1) {
+                            var scrollto = setInterval(function() {
+                                window.scrollTo(0, scroll);
+                                if (scroll > 1) {
+                                    scroll -= 0.001;
+                                } else {
+                                    clearInterval(scrollto);
+                                }
+                            }, 20);
+                        }
+                    }
+                }
+                console.log(scroll + "스크롤");
+                console.log(lastScroll + "라스트스크롤");
+                lastScroll = scroll;
+            });
+        </script>
+    </body>
+</html>

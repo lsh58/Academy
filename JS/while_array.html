@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="while.css" />
+        <style>
+            table,
+            td {
+                border: 1px solid #333;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // document.write("<h1></h1>");
+
+            // var arr = [10, 20, 80, 40, 70];
+
+            // var i = 0;
+            // var sum = 0;
+            // while (i < arr.length) {
+            //     sum += arr[i];
+            //     i++;
+            // }
+            // document.write(sum);
+
+            // 1문제 1/2/3/4/5/6/7/8/9/10
+            // 2문제 1~100까지의 합을 구하시오
+            // 3문제 배열[10,50,60,80,70,60]을 선언하시오
+            // 선언된 배열값의 합을 구하시오
+            // 60보다 큰수의 갯수를 구하시오
+            // 70보다 작은수의 갯수를 구하시오
+
+            // 배열 ['a','b','c','d']값의 길이를 구하시오(for문)
+            // 'c'를 찾아 출력하시오
+            document.write("1번문제 <br>");
+            for (var a = 1; a < 11; a++) {
+                if (a == 10) {
+                    document.write(a + "<br>");
+                } else {
+                    document.write(a + "/");
+                }
+            }
+
+            var sum = 0;
+            document.write("<br> 2번문제 <br>");
+            for (var a = 1; a < 101; a++) {
+                sum = sum + a;
+            }
+            document.write(sum + "<br>");
+
+            var arr = [10, 50, 60, 80, 70, 60];
+            var sum = 0;
+            var count1 = 0;
+            var count2 = 0;
+            document.write("<br> 3번문제 <br>");
+            for (var a = 0; a < arr.length; a++) {
+                sum = sum + arr[a];
+                if (arr[a] > 60) {
+                    count1++;
+                }
+                if (arr[a] < 70) {
+                    count2++;
+                }
+            }
+            document.write("배열값의 합 = " + sum + "<br>");
+            document.write("60보다 큰 수의 갯수 = " + count1 + "<br>");
+            document.write("70보다 작은 수의 갯수 = " + count2 + "<br>");
+
+            var arr = ["a", "b", "c", "d"];
+            var count = 0;
+            document.write("<br> 4번문제 <br>");
+            for (var a = 0; a < arr.length; a++) {
+                count++;
+                if (arr[a] == "c") {
+                    document.write("C를 찾으면 출력하시오. -> " + arr[a] + "<br>");
+                }
+            }
+            document.write("배열값의 길이 = " + count + "<br>");
+        </script>
+    </body>
+</html>

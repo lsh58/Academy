@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var arr = [];
+            var i = 0;
+
+            while (++i <= 10) {
+                var num = Math.ceil(Math.random() * 10);
+                check(num);
+            }
+            function check(n) {
+                var bln = true;
+                for (var k in arr) {
+                    if (arr[k] === n) {
+                        bln = false;
+                        i--;
+                        break;
+                    }
+                }
+                if (bln) {
+                    arr.push(n);
+                }
+            }
+
+            console.log(arr);
+        </script>
+    </body>
+</html>

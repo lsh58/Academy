@@ -1,0 +1,38 @@
+.res{ width: 1200px; border: 5px solid #f00;}
+.res:after{
+    clear: left;
+    display: block;
+    content: '';
+}
+.res div{float: left;
+width: 50%; height: 60vh;
+border: 3px solid #00f;
+box-sizing: border-box;
+font-size: 5vw;
+;}
+/* 1920 / 100 = 1vw */
+
+@media (max-width:1024px){
+    .res{ width: 100%; border: 5px solid #f00;}
+    .res div{float: none;
+    width: 50%; height: 60vh;
+    border: 3px solid #00f;
+    box-sizing: border-box;
+    font-size: 5vw;
+    ;}
+}
+
+@media (max-width:768px){
+    .res{ width: 50%; border: 5px solid #f00;}
+.res div{float: none;
+width: 80%; height: 60vh;
+border: 3px solid #00f;
+box-sizing: border-box;
+font-size: 5vw;
+margin: 0 auto;
+;}
+}
+
+@media (max-width:480px){
+width: 100%;
+}

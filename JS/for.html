@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="while.css" />
+        <style>
+            table,
+            td {
+                border: 1px solid #333;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var arr = [10, 20, 80, 40, 70];
+            var sum = 0;
+            var avg = 0;
+
+            for (var i = 0; i < arr.length; i++) {
+                sum += arr[i];
+                avg = sum / arr.length;
+            }
+            document.write("총점은 " + sum + " 점 입니다. <br>");
+            document.write("평균은 " + avg + " 점 입니다. <br>");
+        </script>
+    </body>
+</html>

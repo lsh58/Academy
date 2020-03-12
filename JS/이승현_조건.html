@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            var computer = Math.floor(Math.random() * 3);
+            var num = [1, 2, 3];
+            var user = null;
+            var str = null;
+            var str2 = null;
+
+            if (computer == num[0]) {
+                str = "가위";
+            } else if (computer == num[1]) {
+                str = "바위";
+            } else {
+                str = "보";
+            }
+            console.log(computer);
+
+            var user = prompt("가위바위보 게임을 시작합니다. 1=가위 2=바위 3=보");
+            if (user == num[0]) {
+                str2 = "가위";
+            } else if (user == num[1]) {
+                str2 = "바위";
+            } else if (user == num[2]) {
+                str2 = "보";
+            } else {
+                alert("잘못 입력하셨습니다.");
+            }
+
+            document.write("컴퓨터 : " + str + "<br> vs <br>" + "당신 : " + str2 + "<br>" + "<br>");
+
+            if ((computer == num[0] && user == num[0]) || (computer == num[1] && user == num[1]) || (computer == num[2] && user == num[2])) {
+                document.write("비기셨습니다");
+            } else if ((computer == num[0] && user == num[1]) || (computer == num[1] && user == num[2]) || (computer == num[2] && user == num[0])) {
+                document.write("이기셨습니다");
+            } else {
+                document.write("지셨습니다");
+            }
+        </script>
+    </body>
+</html>

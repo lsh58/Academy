@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="button" value="x+y" onclick="fun(2,10)" />
+        <p id="result">결과값</p>
+
+        <script>
+            function fun(x, y) {
+                var result = document.getElementById("result");
+                result.textContent = x + y;
+            }
+
+            function fun3() {
+                console.log(arguments);
+                var sum = 0;
+                for (var i in arguments) {
+                    sum += arguments[i];
+                }
+                document.write(sum);
+            }
+            fun3(70, 80, 90, 60, 70, 20, 30, 70);
+
+            var arr = [70, 80, 90, 60, 70, 20, 30, 70];
+            var arr2 = [70, 80, 90, 60, 70, 20, 30, 70];
+            function fun4() {
+                var sum = 0;
+                for (var i in arguments) {
+                    for (var j in arguments[i]) {
+                        sum += arguments[i][j];
+                    }
+                }
+                document.write("<br>" + sum);
+            }
+            fun4(arr, arr2);
+
+            var sum = "홍길순";
+            fun5("name", 80, 70, 60, 80, 90);
+            function fun5(name, ...arr) {
+                var sum = 0;
+                for (var i in arr) {
+                    sum += arr[i];
+                }
+                document.write("<br>" + name + sum);
+            }
+        </script>
+    </body>
+</html>
