@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                margin: 0;
+            }
+            article {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .box {
+                width: 100%;
+                height: 1024px;
+                margin: 10px auto 0 0;
+                background: #eee;
+                transition: 3s;
+            }
+            .change {
+                background: #0f0;
+            }
+        </style>
+        <article>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </article>
+        <script>
+            var box = document.querySelectorAll(".box");
+            box[0].addEventListener("mousewheel", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (e.wheelDeltaY < 0) {
+                    box[1].scrollIntoView();
+                } else {
+                }
+            });
+            box[1].addEventListener("mousewheel", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (e.wheelDeltaY < 0) {
+                    box[2].scrollIntoView();
+                } else {
+                    box[0].scrollIntoView();
+                }
+            });
+            box[2].addEventListener("mousewheel", function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (e.wheelDeltaY < 0) {
+                    box[3].scrollIntoView();
+                } else {
+                    box[1].scrollIntoView();
+                }
+            });
+        </script>
+    </body>
+</html>
