@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BRACKETS 으로 시작하기</title>
+        <meta name="description" content="Brackets에 대한 대화식 시작 안내서입니다.">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        
+        <section>contents01</section>
+        <section>contents02</section>
+        <section>contents03</section>
+        <section>contents04</section>
+        <section>contents05</section>
+        <style>
+            html,body{margin:0;}
+            section{
+                width:100%; height:100vh;
+                background:#f3f3f3; 
+                text-align:center;
+                font-size:5em;
+            }
+            section:nth-of-type(even){background:yellow;}
+            
+        </style>
+       
+        
+        <script>
+            
+            var section = document.querySelectorAll('section'),
+                offset=[],
+                lastPos=null,
+                inter=null,
+                bln=true,
+                k=0;
+
+                for(var i=0;i<section.length;i++){
+                    offset.push(section[i].offsetTop);
+                }
+            
+                 
+                //스크롤 이벤트 추가
+                window.addEventListener('scroll',function(){
+                    firstPos = this.scrollY;
+                    (firstPos>lastPos) ? scrollAni(1) : scrollAni(0);                    
+                    lastPos = firstPos;
+                });
+            
+                function scrollAni(upDown){
+                    if(bln){
+                        bln = false;
+                        if(upDown){
+                            (offset.length>k)?k++:'';
+                            inter = setInterval(function(){
+                                if(firstPos < offset[k]){
+                                    window.scrollBy(0, 10);
+                                }else{
+                                    clearInterval(inter);        
+                                    bln = true;
+                                }
+                            },10);
+                        }else{
+                            (k>0)?k--:'';
+                            inter = setInterval(function(){
+                                if(firstPos > offset[k]){
+                                    window.scrollBy(0, -10);
+                                }else{
+                                    clearInterval(inter);        
+                                    bln = true;
+                                }
+                            },10);    
+                        }
+                    }
+                }
+
+        </script>
+        
+        
+        
+        
+        
+    </body>
+</html>

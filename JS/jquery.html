@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="slide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <button>show()</button>
+    <button>hide()</button>
+
+    <div class="box">
+        콘텐츠 내용입니다.
+    </div>
+
+    <script>
+
+        $(function () {
+            $('.box').hide();
+
+            $('button:first').click(function () {
+                //= $('button:first').on('click',function () {
+                $('.box').css({
+                    width: '150px',
+                    border: '1px solid #000',
+                    padding: '30px',
+                    fontSize: '1em',
+                });
+                // $('.box').show(500);
+
+                $('.box').slideToggle(500);
+
+            });
+            $('button:last').click(function () {
+                // $('.box').hide(500);
+                $('.box').slideUp(500);
+            });
+        });
+
+
+        /*
+                $(function () {
+
+                 }); //loaded . 문서의 내용이 읽혀진 후 를 뜻한다. (축약형)
+
+                $(document).ready(function () {
+
+                });//loaded . 문서의 내용이 읽혀진 후 를 뜻한다.
+
+
+        $(function () {
+            $('선택자').메소드();
+        });
+
+        $(function () {
+            $('.box').hide();
+            // var a = document.querySelector('.box');
+            // a.style.display = 'none';
+        });
+
+
+        $(function () {
+            $('.box').hide();
+
+            $('button:first').click(function () {
+                //= $('button:first').on('click',function () {
+                $('.box').css({
+                    width: '150px',
+                    border: '1px solid #000',
+                    padding: '30px',
+                    fontSize: '1em',
+                });
+                $('.box').show(500);
+
+            });
+            $('button:last').click(function () {
+                $('.box').hide(500);
+            });
+        });
+
+
+        */
+    </script>
+</body>
+
+</html>

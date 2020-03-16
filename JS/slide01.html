@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="slide.js"></script>
+</head>
+
+<body>
+
+    <div class="slide">
+        <ul class="slide_ani">
+            <li class="s_bn"><img src="images/img01.jpg"></li>
+            <li class="s_bn"><img src="images/img02.jpg"></li>
+            <li class="s_bn"><img src="images/img03.jpg"></li>
+        </ul>
+        <p>
+            <a class="prevBtn">prev</a>
+            <a class="nextBtn">next</a>
+        </p>
+    </div>
+
+
+    <script>
+        var slide = document.querySelector('.slide');
+        var slideAni = slide.querySelector('.slide_ani');
+        var banners = slide.querySelectorAll('.s_bn');
+
+        for (var i = 0; i < banners.length; i++) {
+            banners[i].style.left = 100 * i + '%';
+        } //모든 li들 정렬
+
+        var idx = 0;
+        var prevBtn = slide.querySelector('.prevBtn');
+        var nextBtn = slide.querySelector('.nextBtn');
+
+        prevBtn.addEventListener('click', function () {
+            slideanimate(1);
+        });
+        nextBtn.addEventListener('click', function () {
+            slideanimate(0);
+        });
+
+        function slideanimate(k) {
+            if (k) {
+                idx--;
+            }
+            else {
+                idx++;
+
+            }
+            slideAni.style.left = -100 * idx + '%';
+            if (idx == 0) {
+                prevBtn.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'block';
+            }
+            if (idx == banners.length - 1) {
+                nextBtn.style.display = 'none';
+            }
+            else {
+                nextBtn.style.display = 'block';
+            }
+        }
+        if (idx == 0) {
+            prevBtn.style.display = 'none';
+        }
+
+
+    </script>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .slide {
+            width: 500px;
+            height: 310px;
+            margin: 0 auto;
+            position: relative;
+            border: 5px solid #000;
+            overflow: hidden;
+        }
+
+        .slide ul {
+            width: 100%;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: .5s;
+        }
+
+        .slide ul li {
+            width: 100%;
+            position: absolute;
+        }
+
+        .slide ul li img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .slide p {
+            position: absolute;
+            top: 34%;
+            left: 5%;
+            width: 90%;
+            z-index: 2;
+        }
+
+        .slide p a {
+            font-size: 0;
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #ddd;
+            border-radius: 100%;
+            position: relative;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        .slide p a:first-child {
+            float: left;
+        }
+
+        .slide p a:first-child:after {
+            content: '<';
+            font-size: 30px;
+        }
+
+        .slide p a:last-child {
+            float: right;
+        }
+
+        .slide p a:last-child:after {
+            content: '>';
+            font-size: 30px;
+        }
+    </style>
+
+</body>
+
+</html>
