@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="slide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        img {
+            width: 600px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <div class="fade">
+        <img src="../images/img01.jpg" alt="">
+        <img src="../images/img02.jpg" alt="">
+        <img src="../images/img03.jpg" alt="">
+    </div>
+
+
+    <script>
+        //fade in,out 구현
+        var i = 0, inter;
+        $(function () {
+            $('.fade img').not(':first').hide(); //첫번쨰 제외하고 사라지게 함
+            $('.fade img').on('mouseenter', function () {
+                clearInterval(inter);
+            });
+            $('.fade img').on('mouseleave', function () {
+                loop()
+            });
+
+            function loop() {
+                inter = setInterval(function () {
+                    $('.fade img').eq(i).fadeOut(500);
+                    i++;
+                    if (i == 3) {
+                        i = 0;
+                    }
+                    $('.fade img').eq(i).fadeIn(500);
+                }, 800)  //무한루프
+            } loop();
+
+        });
+    </script>
+</body>
+
+</html>

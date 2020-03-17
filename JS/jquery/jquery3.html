@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="slide.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .btn {
+            width: 1000px;
+            height: 1000px;
+            margin: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav {
+            background: #ddd;
+            padding: 100px;
+            display: inline-block;
+            position: absolute;
+            left: -600px;
+            top: 50px;
+        }
+    </style>
+    <div>
+        <button>우측</button>
+        <button>좌측</button>
+        <div class="box">
+            콘텐츠 내용입니다.
+        </div>
+    </div>
+
+    <div class="btn">
+        <button>메뉴</button>
+        <div class="nav">네비게이션</div>
+    </div>
+
+
+    <script>
+        var idx = 0;
+        $(function () {
+            $('.box').css({
+                width: 100,
+                height: 100,
+                background: 'red'
+            });
+            $('.btn button').on('click', function () {
+
+                if (idx == 0) {
+                    $('.nav').animate({
+                        left: 0
+                    }, 400, function () {
+                        $('.btn button').text('닫기');
+                    });
+                    idx = 1;
+                }
+                else {
+                    $('.nav').animate({
+                        left: -600
+                    }, 400, function () {
+                        $('.btn button').text('메뉴');
+                    });
+                    idx = 0;
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

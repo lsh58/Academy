@@ -9,38 +9,35 @@
 </head>
 
 <body>
-
-    <button>show()</button>
-    <button>hide()</button>
+<div>
+    <button>우측</button>
+    <button>좌측</button>
 
     <div class="box">
         콘텐츠 내용입니다.
     </div>
 
     <script>
-
         $(function () {
-            $('.box').hide();
-
-            $('button:first').click(function () {
-                //= $('button:first').on('click',function () {
-                $('.box').css({
-                    width: '150px',
-                    border: '1px solid #000',
-                    padding: '30px',
-                    fontSize: '1em',
-                });
-                // $('.box').show(500);
-
-                $('.box').slideToggle(500);
-
+            $('.box').css({
+                width: 100,
+                height: 100,
+                background: 'red'
             });
-            $('button:last').click(function () {
-                // $('.box').hide(500);
-                $('.box').slideUp(500);
+            var count = 0;
+            $('button').on('click', function () {
+                var $this = $(this).index();
+                if ($this == 0) {
+                    count += 50;
+                }
+                else {
+                    count -= 50;
+                }
+                $('.box').animate({
+                    marginLeft: count
+                }, 400);
             });
         });
-
 
         /*
                 $(function () {
@@ -74,13 +71,17 @@
                     padding: '30px',
                     fontSize: '1em',
                 });
-                $('.box').show(500);
+                // $('.box').show(500);
+
+                $('.box').slideToggle(500);
 
             });
             $('button:last').click(function () {
-                $('.box').hide(500);
+                // $('.box').hide(500);
+                $('.box').slideUp(500);
             });
         });
+
 
 
         */

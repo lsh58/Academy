@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .each {
+            padding: 50px;
+            border: 5px solid #000;
+            margin: 100px;
+        }
+    </style>
+    <div class="each">
+        <img src="../images/img01.jpg" alt="">
+        <img src="../images/img02.jpg" alt="">
+        <img src="../images/img03.jpg" alt="">
+    </div>
+
+
+    <script>
+
+        $(function () {
+            var wid = $('.each').width();//안에 있는 컨텐츠 크기만
+            var innerwid = $('.each').innerWidth();//padding값포함, border값은 제외
+            console.log(innerwid);
+            var outerWidth = $('.each').outerWidth();//border까지 포함
+            var outerWidth2 = $('.each').outerWidth(true); //margin까지 포함
+            console.log(outerWidth);
+            console.log(outerWidth2);
+
+            var elmCss = parseInt($('.each').css('padding'));
+            console.log(elmCss);
+
+        });
+    </script>
+</body>
+
+</html>
