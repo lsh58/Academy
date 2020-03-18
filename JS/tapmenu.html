@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .tab p a {
+            border: 1px solid #000;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .tab p a.active {
+            background: yellowgreen;
+        }
+
+        .con {
+            position: relative;
+        }
+
+        .con div {
+            border: 1px solid #000;
+            padding: 20px;
+            display: inline-block;
+            display: none;
+        }
+
+        .con div.active {
+            display: block;
+        }
+    </style>
+    <div class="tab">
+        <p>
+            <a href="" class="actvie" data-num='0'>tab01</a>
+            <a href="" data-num='1'>tab02</a>
+            <a href="" data-num='2'>tab03</a>
+        </p>
+        <div class="con">
+            <div class="active">con01</div>
+            <div>con02</div>
+            <div>con03</div>
+        </div>
+    </div>
+
+    <script>
+        var tabButton = document.querySelectorAll('.tab p a');
+        var content = document.querySelectorAll('.con div');
+        var tab;
+
+
+
+        for (var i = 0; i < tabButton.length; i++) {
+            tabButton[i].addEventListener('click', tab)
+        }
+
+        tab = function () {
+            event.preventDefault();
+            var num = event.target.dataset.num;
+            for (let i = 0; i < tabButton.length; i++) {
+                tabButton[i].classList.remove('active');
+                content[i].classList.remove('active');
+            }
+
+            tabButton[num].className('active');
+            content[num].className('active');
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
