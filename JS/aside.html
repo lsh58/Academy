@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>scroll</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <aside>top</aside>
+    <style>
+        div {
+            height: 2000px;
+        }
+
+        aside {
+            position: absolute;
+            right: 0;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: #fff;
+            transition: .2s;
+        }
+    </style>
+
+
+    <script>
+
+        $(function () {
+
+            var sTop = 0;
+
+            $(window).on("scroll", function () {
+                sTop = $(this).scrollTop();
+
+                $("aside").css({
+                    top: sTop + 100
+                });
+            });
+
+            var dom = $(document).height() - $(window).height();
+
+        });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

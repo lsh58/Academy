@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>scroll</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+
+    <style>
+        div {
+            width: 400px;
+            height: 500px;
+            background: #aaa;
+            margin: 200px auto 0;
+            opacity: 0;
+            transition: 2s;
+        }
+    </style>
+
+
+    <script>
+
+        $(function () {
+            var sTop = 0;
+
+            $(window).on("scroll", function () {
+                var winH = $(window).height();
+
+                sTop = $(this).scrollTop();
+
+                $('div').each(function (i) {
+                    var con = $('div').eq(i).offset().top;
+
+                    if (con - winH < sTop) {
+                        console.log(con);
+                        $('div').eq(i).css({
+                            opacity: 1,
+                            marginTop: 100
+                        });
+                    }
+                })
+            });
+
+            $(window).trigger('scroll');
+
+            var dom = $(document).height() - $(window).height();
+
+        });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

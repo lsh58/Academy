@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>scroll</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+
+
+    <style>
+        div {
+            width: 400px;
+            height: 500px;
+            background: #aaa;
+            margin: 200px auto 0;
+            opacity: 0;
+            transition: 2s;
+        }
+    </style>
+
+
+    <script>
+
+        $(function () {
+            var firstCount, lastCount;
+
+            $(window).on('scroll', function () {
+
+                firstCount = $(this).scrollTop();
+                lastCount = firstCount;
+
+            })
+        });
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

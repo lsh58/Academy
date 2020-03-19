@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>scroll</title>
-    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -22,7 +21,22 @@
     </style>
 
     <script>
+        var i = 0;
+        var bln = true;
+        var upScroll, downScroll;
+        window.addEventListener('scroll', function () {
+            upScroll = this.scrollY;
+            if (bln) {
+                bln = false;
+                i++;
+                console.log(i);
 
+                setTimeout(function () {
+                    bln = true;
+                }, 500)
+            }
+            downScroll = upScroll;
+        });
 
 
     </script>

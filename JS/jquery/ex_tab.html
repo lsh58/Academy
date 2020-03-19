@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        section {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .s1 {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .s1 div {
+            width: 30%;
+            height: 200px;
+            font-size: 3em;
+            background: #ddd;
+            margin-top: 40px;
+        }
+
+        button {
+            font-size: 2em;
+        }
+    </style>
+
+    <section>
+
+        <p>
+            <button>All</button>
+            <button>red</button>
+            <button>yellow</button>
+            <button>blue</button>
+        </p>
+        <div class="s1">
+            <div>blue</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>yellow</div>
+            <div>blue</div>
+            <div>red</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>blue</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>red</div>
+        </div>
+
+    </section>
+
+
+    <script>
+        var button = document.querySelectorAll('button');
+        var s1 = document.querySelector('.s1');
+        var s1div = s1.querySelectorAll('div');
+
+        // for (var i = 0; i < button.length; i++) {
+        //     button[i].addEventListener('click', function () {
+        //         var btnName = this.innerHTML;
+        //         console.log(btnName);
+        //         for (var i = 0; i < s1div.length; i++) {
+        //             s1div[i].style.display = 'block';
+        //             if (s1div[i].innerHTML != btnName) {
+        //                 s1div[i].style.display = 'none';
+        //             }
+        //             if (btnName == 'All') {
+        //                 s1div[i].style.display = 'block';
+        //             }
+        //         }
+
+        //     })
+        // }
+        // $(function () {
+        //     $('button').eq(0).on('click', function () {
+        //         $(".s1 div").stop().hide();
+        //         $(".s1 div").stop().slideDown(500);
+        //     });
+        //     $('button').eq(1).on('click', function () {
+        //         $(".s1 div").stop().hide();
+        //         $(".s1 div:contains('red')").show(5000);
+        //     });
+        //     $('button').eq(2).on('click', function () {
+        //         $(".s1 div").not(".s1 div:contains('blue')").stop().hide();
+        //         // $(".s1 div:contains('yellow')").stop().fadeIn(500);
+        //     });
+        //     $('button').eq(3).on('click', function () {
+        //         $(".s1 div").stop().hide();
+        //         $(".s1 div:contains('blue')").stop().fadeIn(500);
+        //     });
+
+        // });
+
+        $(function () {
+            $('button').eq(0).on('click', function () {
+                $(".s1 div").stop().hide();
+                $(".s1 div").show();
+            });
+            $('button').eq(1).on('click', function () {
+                $(".s1 div").show();
+                var a = $(".s1 div").not(".s1 div:contains('red')");
+                // $(".s1 div").not(".s1 div:contains('red')").stop().hide(500);
+                console.log(a);
+                $(".s1 div").each(function (index, a) { $(a).hide(); })
+            });
+            $('button').eq(2).on('click', function () {
+                $(".s1 div").show();
+                $(".s1 div").not(".s1 div:contains('blue')").stop().hide(500);
+            });
+            $('button').eq(3).on('click', function () {
+                $(".s1 div").show();
+                $(".s1 div").not(".s1 div:contains('yellow')").stop().hide(500);
+            });
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

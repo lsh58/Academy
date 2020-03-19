@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+        section {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+
+        .s1 {
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+            /* display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; */
+            position: relative;
+        }
+
+        .s1 div {
+            width: 30%;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background: #ddd;
+            font-size: 3em;
+            margin-top: 40px;
+            transition: .5s;
+            opacity: 1;
+        }
+
+        button {
+            font-size: 2em;
+        }
+    </style>
+
+    <section>
+
+        <p>
+            <button>All</button>
+            <button>red</button>
+            <button>yellow</button>
+            <button>blue</button>
+        </p>
+        <div class="s1">
+            <div>blue</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>yellow</div>
+            <div>blue</div>
+            <div>red</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>blue</div>
+            <div>yellow</div>
+            <div>red</div>
+            <div>red</div>
+        </div>
+
+    </section>
+
+
+    <script>
+        var button = document.querySelectorAll('button');
+        var s1 = document.querySelector('.s1');;
+        var s1div;
+        var html = s1.innerHTML;
+        console.log(s1.style)
+        function setup() {
+            s1 = document.querySelector('.s1');
+            s1div = s1.querySelectorAll('div');
+            setTimeout(function () {
+                for (var i = 0; i < s1div.length; i++) {
+                    s1div[i].style.left = i * 350 + "px";
+                    s1div[i].style.top = 0 + "px";
+                }
+                for (var i = 3; i < s1div.length; i++) {
+                    s1div[i].style.left = (i - 3) * 350 + "px";
+                    s1div[i].style.top = 3 * 80 + "px";
+                }
+                for (var i = 6; i < s1div.length; i++) {
+                    s1div[i].style.left = (i - 6) * 350 + "px";
+                    s1div[i].style.top = 6 * 80 + "px";
+                }
+                for (var i = 9; i < s1div.length; i++) {
+                    s1div[i].style.left = (i - 9) * 350 + "px";
+                    s1div[i].style.top = 9 * 80 + "px";
+                }
+            }, 20);
+            //             $('.s1 div').eq(0).animate({ left: 0, top: 0 }, 1000);
+            //             $('.s1 div').eq(1).animate({ left: 350 + 'px', top: 0 }, 1000);
+            //             $('.s1 div').eq(2).animate({ left: 700 + 'px', top: 0 }, 1000);
+            //             $('.s1 div').eq(3).animate({ left: 0 + 'px', top: 240 + 'px' }, 1000);
+            //             $('.s1 div').eq(4).animate({ left: 350 + 'px', top: 240 + 'px' }, 1000);
+            //             $('.s1 div').eq(5).animate({ left: 700 + 'px', top: 240 + 'px' }, 1000);
+            //             $('.s1 div').eq(6).animate({ left: 0 + 'px', top: 480 + 'px' }, 1000);
+            //             $('.s1 div').eq(7).animate({ left: 350 + 'px', top: 480 + 'px' }, 1000);
+            //             $('.s1 div').eq(8).animate({ left: 700 + 'px', top: 480 + 'px' }, 1000);
+            //             $('.s1 div').eq(9).animate({ left: 0 + 'px', top: 720 + 'px' }, 1000);
+            //             $('.s1 div').eq(10).animate({ left: 350 + 'px', top: 720 + 'px' }, 1000);
+            //             $('.s1 div').eq(11).animate({ left: 700 + 'px', top: 720 + 'px' }, 1000);
+        }
+        setup();
+
+        var leftArr = [];
+        for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('click', function () {
+                s1.innerHTML = '';
+                s1.innerHTML = html;
+                for (var i = 0; i < s1div.length; i++) {
+                    s1div[i].style.display = 'block';
+                    setup();
+                }
+                var btnName = this.innerHTML;
+                if (btnName == 'All') {
+                    for (var i = 0; i < s1div.length; i++) {
+                        s1div[i].style.display = 'block';
+                        setup();
+                    }
+                } else {
+                    for (var i = 0; i < s1div.length; i++) {
+                        if (s1div[i].innerHTML != btnName) {
+                            s1div[i].remove();
+                        }
+                    }
+
+                    //                    $('.s1 div').eq(0).animate({ left: 0, top: 0 }, 1000);
+                    //                    $('.s1 div').eq(1).animate({ left: 350 + 'px', top: 0 }, 1000);
+                    //                    $('.s1 div').eq(2).animate({ left: 700 + 'px', top: 0 }, 1000);
+                    //                    $('.s1 div').eq(3).animate({ left: 0 + 'px', top: 240 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(4).animate({ left: 350 + 'px', top: 240 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(5).animate({ left: 700 + 'px', top: 240 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(6).animate({ left: 0 + 'px', top: 480 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(7).animate({ left: 350 + 'px', top: 480 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(8).animate({ left: 700 + 'px', top: 480 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(9).animate({ left: 0 + 'px', top: 720 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(10).animate({ left: 350 + 'px', top: 720 + 'px' }, 1000);
+                    //                    $('.s1 div').eq(11).animate({ left: 700 + 'px', top: 720 + 'px' }, 1000);
+                    setup();
+                }
+
+            });
+        }
+
+
+
+
+        // for (var i = 0; i < button.length; i++) {
+        //     button[i].addEventListener('click', function () {
+        //         var btnName = this.innerHTML;
+        //         console.log(btnName);
+        //         for (var i = 0; i < s1div.length; i++) {
+        //             s1div[i].style.display = 'block';
+        //             if (s1div[i].innerHTML != btnName) {
+        //                 s1div[i].style.display = 'none';
+        //             }
+        //             if (btnName == 'All') {
+        //                 s1div[i].style.display = 'block';
+        //             }
+        //         }
+
+
+
+
+        // $(function () {
+        //     $('button').eq(0).on('click', function () {
+        //         $(".s1 div").stop().hide();
+        //         $(".s1 div").show();
+        //     });
+        //     $('button').eq(1).on('click', function () {
+        //         $(".s1 div").show();
+        //         var a = $(".s1 div").not(".s1 div:contains('red')");
+        //         // $(".s1 div").not(".s1 div:contains('red')").stop().hide(500);
+        //         console.log(a);
+        //         $(".s1 div").each(function (index, a) { $(a).hide(); })
+        //     });
+        //     $('button').eq(2).on('click', function () {
+        //         $(".s1 div").show();
+        //         $(".s1 div").not(".s1 div:contains('blue')").stop().hide(500);
+        //     });
+        //     $('button').eq(3).on('click', function () {
+        //         $(".s1 div").show();
+        //         $(".s1 div").not(".s1 div:contains('yellow')").stop().hide(500);
+        //     });
+
+        // });
+
+    </script>
+
+
+
+</body>
+
+</html>
