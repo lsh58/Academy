@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+
+<div class="box">
+    <div></div>
+</div>
+
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+    
+    var box = document.querySelector('.box');
+    var boxDiv = document.querySelector('.box div');
+
+    console.log(boxDiv.offsetTop);
+    console.log(boxDiv.offsetLeft);
+    
+    /* 
+    box.addEventListener('scroll',function(e){
+        console.log( this.scrollTop);
+    });*/
+    boxDiv.addEventListener('click',function(){
+        window.scrollBy(0,100);    
+    });
+    
+    window.addEventListener('scroll',function(e){
+        //window.scrollTo(0,100); //절대
+        //window.scrollBy(0,100); //상대
+        console.log( this.scrollY);
+    });
+    
+    
+    console.log(
+        document.documentElement.innerHeight - window.innerHeight
+    )
+    
+    
+});
+    
+</script>
+
+
+
+
+<style>
+    *{margin:0;}
+    .box{
+        height:3000px;
+        overflow:scroll;
+        position:relative;
+        top:500px;
+        border:5px solid #00b;
+    }
+    .box div{
+        position:absolute;
+        width:300px; height:200px;     
+        background:#f00;
+        margin:300px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
