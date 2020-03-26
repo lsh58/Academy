@@ -1,0 +1,107 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            //start        
+
+            $.ajax({
+                url: 'data.xml',
+                type: 'GET',
+                dataType: 'xml',
+                timeout: 2000,
+                beforeSend: function () { },
+                success: function (data) {
+
+
+
+                },
+                error: function () {
+                    alert('Fail');
+                }
+
+            });//ajax end
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+    <header>
+        <p><img src="img/LOGO.png"></p>
+        <ul>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">My page</a></li>
+            <li><a href="#">Language</a></li>
+
+        </ul>
+
+    </header>
+
+    <section>
+        <div class="sec01">
+            <ul>
+                <li>
+                    <a href="#">All</a>
+                </li>
+                <li>
+                    <a href="#">Furniture</a>
+                </li>
+                <li>
+                    <a href="#">Logo</a>
+                </li>
+                <li>
+                    <a href="#">People</a>
+                </li>
+                <li>
+                    <a href="#">Print</a>
+                </li>
+            </ul>
+
+
+            <div class="pic">
+                <!-- <div>
+                    <p><img src="img/Layer-2.jpg" /></p>
+                    <span>Album Covers</span>
+                    <b>People</b>
+                </div>-->
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <p>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Dribbble</a>
+            <a href="#">You Tube</a>
+        </p>
+        <b>© Copyright 2019 | Kalium Theme by Laborator</b>
+    </footer>
+
+</body>
+
+</html>
