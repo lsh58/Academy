@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script>
+        $(function(){
+            
+           // $('선택자').메소드();
+$('a').on('click',function(){
+    var seletor = $(this);
+    console.log(seletor);
+});
+            
+            
+$('.box').hide(); //none
+
+$('button:first').on('click',function(){
+     //block
+    $('.box').css({ 
+        border  : '1px solid #000',
+        padding : '60px',
+        //'font-size': '5em'
+        fontSize: '5em'
+    });
+    
+    //$('.box').show(500);
+    $('.box').slideToggle(500);
+});
+            
+            
+            
+            
+/*var a = document.querySelector('.box');
+a.style.display = 'none';*/
+            
+        });
+    
+        
+//        $(document).ready(function(){
+//            
+//        });
+    </script>
+    
+    
+</head>
+<body>
+    <div><a>asdf</a></div>
+    <button> show() </button>
+    <button> hide() </button>
+    
+    <div class="box">
+        콘텐츠 내용입니다.
+    </div>
+    
+    
+    
+    
+    
+</body>
+</html>

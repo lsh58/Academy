@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link src="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function () {
+    //start
+    
+    
+var firstCount = 0,
+    lastCount = 0;
+
+    $(window).on('scroll',function(e){
+        console.log(e)
+        //window.scrollY
+        //window.outerHeight
+        
+        firstCount = $(this).scrollTop();  
+
+        //console.log("first"+firstCount);  
+        //console.log("last"+lastCount);    
+        // 스크롤을 아래로 내리면 first 수치가 더 크다
+        // 스크롤을 위로 올리면 last 수치가 더 크다
+        if(firstCount > lastCount){
+            //스크롤을 아래로 내림
+            console.log('내림');
+            $('header').addClass('active');
+
+        }else{
+            //스크롤을 위로 올림
+            console.log('올림');
+            $('header').removeClass('active');
+        }
+
+        lastCount = firstCount;
+
+        
+    });
+
+    
+//    var ele =document.getElementById('test'); // 변수에 엘리먼트 저장
+//
+//    var customEvent = document.createEvent('Event'); // 인스턴스 이벤트 생성
+//    customEvent.initEvent('click', function(){console.log('aaa')}, true); // 클릭 이벤트 정보를 설정함
+//
+//    ele.dispatchEvent(customEvent);
+    
+var elem =window;
+var event = new Event('build');
+
+// 이벤트 리슨.
+elem.addEventListener('build', function (e) { console.log('aaa') }, false);
+
+// 이벤트 디스패치.
+elem.dispatchEvent(event);
+    
+    
+
+
+
+    
+   
+    //end
+});
+</script>
+</head>
+
+<body>
+   
+   <button id="test">event</button>
+   
+    <style>
+        header{
+            width:100%; height:80px; background:#000;
+            position:fixed; top:0; left:0;
+            transition:.5s;
+        }
+        header.active{
+            top:-80px;
+        }
+    </style>
+
+<!--<header></header>-->
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+
+<style>
+    div{
+        width:400px; height:500px;
+        background:#aaa;
+        
+        margin:0 auto;
+        margin-top:200px;
+        
+        opacity:0;
+        transition:1s;
+    }
+   
+</style> 
+    
+    
+</body>
+
+</html>

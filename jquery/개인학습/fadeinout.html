@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+<script>
+$(function(){
+//start
+    not(':first')  //첫번째를 제외한 나머지
+    hide(); //display를 none처리함
+
+    setInterval(function(){ 
+        /*반복명령실행*/ 
+        eq()        // nth-of-type()과 비슷함
+        fadeOut();  // 서서히 사라짐
+        fadeIn()    // 서서히 나타남
+    },2000); 
+    
+    $('.fade').on('mouseenter',function(){
+        clearInterval(inter); //interval 삭제
+    });
+    
+    $('.fade').on('mouseleave',function(){
+        loop(); //interval 호출함수
+    });
+    
+    
+    
+    
+//end
+});    
+</script>
+    
+    
+</head>
+<body>
+
+
+<div class="fade">
+    <img src="../DomContral/img/img-01.jpg">
+    <img src="../DomContral/img/img-02.jpg">
+    <img src="../DomContral/img/img-03.jpg">
+</div>
+   
+<style>
+    img{
+        width:600px; height:400px;
+        position:absolute;
+        left:0; top:0;
+    }
+</style>
+   
+    
+    
+    
+</body>
+</html>

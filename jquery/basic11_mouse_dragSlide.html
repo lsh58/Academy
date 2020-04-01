@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link src="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    
+<script>
+$(function () {
+    //start
+    /*
+        axis, revert, containment
+    */
+var li = document.querySelectorAll('.slide ul li');
+var length = $('.slide li').length;
+var idx = 0;
+    
+for(var i=0;i<length;i++){
+    //ul.children[i].style.left = i * 100 + '%';
+    li[i].style.left = i * 100 + '%';
+
+    /*$('.slide li').eq(i).css({
+        left: i * 100 + '%'
+    })*/
+}
+    
+    
+    var posStart, posStop;
+    
+    $('.slide ul').draggable({
+        axis:'x',
+//        revert : true,
+        start :function(e){
+            //console.log('start')
+            
+            posStart = e.pageX;
+        },
+        drag :function(e){
+            //console.log(e)
+        },
+        stop :function(e){
+            posStop = e.pageX;
+            
+            if(posStart > posStop){
+                console.log('좌측');
+                console.log(posStart - posStop);
+                idx++;
+                
+            }else{
+                console.log('우측');
+                console.log(posStop - posStart);
+                idx--;
+            }
+                        
+            draging();
+        }
+    });
+    
+    function draging(){
+        $('.slide ul').stop().animate({
+            left: -idx * 100 + '%'
+        });
+    }
+    
+
+    /*
+        dragstart
+        dragend
+        dragover
+        dragenter
+        dragleave
+    */
+    
+var ban = document.querySelector('.ban');
+    
+ban.addEventListener('dragstart',function(){
+    console.log('dragStart');    
+});
+ban.addEventListener('dragend',function(){
+    console.log('dragEnd');    
+});
+
+    
+    
+    
+    
+    //end
+});
+</script>
+</head>
+
+<body>
+
+<div class="ban" draggable="true">sdfsdf</div>
+ 
+<div class="slide">
+    <ul>
+        <li>slide 01</li>
+        <li>slide 02</li>
+        <li>slide 03</li>
+        <li>slide 04</li>
+    </ul>
+</div>
+
+<style>
+    .slide{
+        width:300px; 
+        height:300px; 
+        border:5px solid #f00;
+        position:relative;
+    }
+    .slide ul{
+        position:absolute;left:0; top:0;
+        width:100%; height:100%;
+        margin:0; padding:0;
+        list-style:none;
+    }
+    .slide ul li{
+        width:100%; height:100%;
+        border:1px solid #000;
+        background:#ddd;
+        position:absolute;
+        left:0; top:0;
+    }
+    /*.slide ul li:nth-of-type(1){left:0;}
+    .slide ul li:nth-of-type(2){left:100%;}
+    .slide ul li:nth-of-type(3){left:200%;}
+    .slide ul li:nth-of-type(4){left:300%;}*/
+</style>
+  
+
+
+    
+</body>
+
+</html>
