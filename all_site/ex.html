@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background: #fff;
+            display: flex;
+        }
+        .a{
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 100%;
+        }
+        .b{
+            width: 30px;
+            height: 30px;
+            background: green;
+        }
+        .b.red{
+            background: red;
+        }
+    </style>
+    <div class="a">
+    </div>
+    <div class="b">
+    </div>
+    <script>
+        var aa =document.querySelector('.a');
+        var bb =document.querySelector('.b');
+
+        aa.addEventListener('click',function(){
+            bb.classList.toggle("red");
+        })
+    </script>
+</body>
+</html>
