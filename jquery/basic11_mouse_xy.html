@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link src="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function () {
+    //start
+    $(window).on('click',function(e){
+        
+        //console.log(e.X);
+        console.log('clientX'+e.clientX);
+        console.log('pageX='+e.pageX);
+        console.log('offsetX='+e.offsetX);
+        
+    });
+    
+    //end
+});
+</script>
+</head>
+
+<body>
+  
+<section>
+    <div>01</div>
+</section>
+
+<style>
+    *{margin:0;}
+    body{}
+    section{
+        position:relative;
+        height:800px;
+        border:5px solid #f00;
+    }
+    div{
+        width:100px; height:100px;
+        background:#f00;
+    }    
+</style> 
+    
+    
+</body>
+
+</html>

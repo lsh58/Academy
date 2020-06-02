@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+<script>
+$(function(){
+//start
+$('.fade img').not(':first').hide();
+    
+var idx = 0, inter;
+function loop(){
+    inter = setInterval(function(){
+        //서서히 사라짐
+        $('.fade img').eq(idx).fadeOut(1000);// 0 1 2 0 1 2
+        idx++;
+        if(idx==3){idx=0;}
+        //서서히 나타남
+        $('.fade img').eq(idx).fadeIn(1000);// 1 2 0 1 2 0
+    },2000);
+}loop();
+    
+
+    $('.fade').on('mouseenter',function(){
+        clearInterval(inter);
+    });
+    
+    $('.fade').on('mouseleave',function(){
+        loop();
+    });
+    
+    
+    
+    
+//end
+});    
+</script>
+    
+    
+</head>
+<body>
+
+
+<div class="fade">
+    <img src="../DomContral/img/img-01.jpg">
+    <img src="../DomContral/img/img-02.jpg">
+    <img src="../DomContral/img/img-03.jpg">
+</div>
+   
+<style>
+    img{
+        width:600px; height:400px;
+        position:absolute;
+        left:0; top:0;
+    }
+</style>
+   
+    
+    
+    
+</body>
+</html>
