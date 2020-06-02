@@ -11,19 +11,20 @@
 }
 
 .con_s1 ul {
-    overflow: hidden
+    overflow: hidden;
+    background: red;
 }
 
 .con_s1 ul li {
     float: left;
     width: 32%;
     /* calc(32% - 10px) */
-    margin: 0 2% 30px 0;
+    background: blue;
     position: relative;
+    margin: 0 2% 30px 0;
     overflow: hidden;
     font-size: 0;
     padding: 5px;
-
 }
 
 .con_s1 ul li:nth-of-type(3n) {
@@ -33,81 +34,21 @@
 .con_s1 ul li img {
     width: 100%
 }
-
-.con_s1 ul li:hover {}
-
 .con_s1 ul li span {
     position: absolute;
-    left: 0;
-    bottom: -50px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    left: 0; bottom: -50px;
+    width: 10%;
+    background: rgba(0, 0, 0, 1);
     text-align: center;
     line-height: 3;
     opacity: 0;
-    transition: .5s;
+    transition: bottom 2s;
 }
 
 .con_s1 ul li:hover span {
     opacity: 1;
-    transition: .5s;
-    bottom: 0;
+    bottom:0;
+    font-style: italic;
 }
-
-.con_s2 {
-    width: 1140px;
-    margin: 100px auto
-}
-
-.con_s2 ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-    align-content: ;
-    height: 1000px;
-}
-
-.con_s2 ul li {
-    width: 32%;
-    position: relative
-}
-
-.con_s2 ul li img {
-    width: 100%
-}
-.con_s2 ul li span{
-    position: absolute;
-    left: 0; top: 0;
-    background: rgba(0,0,0,0.6);
-    width: 100%; height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-}
-
-/*-------------board.html-------------*/
-
-
-.con_s3{
-        width:1000px; margin: 100px auto;
-}
-.con_s3 ul{
-  /*  list-style-image: url(../images/popup.png);
-    list-style-position: inside;*/
-}
-.con_s3 ul li{
-    border-bottom:1px dashed #000;
-    line-height: 3;
-    padding-left: 30px;
-    background:url(../images/search.png) left center no-repeat;
-    /*background-position: left center;*/
-}
-.con_s3 ul li:nth-of-type(n){ /* even-짝수, odd-홀수 */
-    background-color: #eee; 
-}
-
-
-
 
 

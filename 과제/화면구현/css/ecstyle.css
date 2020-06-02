@@ -1,0 +1,192 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url('https://fonts.googleapis.com/css?family=Baskervville:400i|Bentham|PT+Serif:400,400i&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+   line-height: 1;
+}
+ol, ul {
+   list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+   content: '';
+   content: none;
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+img{
+    vertical-align: top;
+}
+
+/* Typography */
+/*
+ font-family: 'Bentham', serif;
+ font-family: 'Baskervville', serif;
+ font-family: 'PT Serif', serif;
+*/
+
+body{
+    font-family: 'Myriad Pro', serif;
+    font-size: 18px;
+    color:#6f6f6f;
+}
+
+/* Layout */
+
+header{
+   height: 960px;
+   width: 100%;
+   background: url(../img/background.jpg) no-repeat center /auto;
+}
+
+
+.menu{
+   display: flex;
+   height: 22px;
+   width: 1269px;
+   padding-top: 65px;
+   margin: 0 auto;
+   justify-content: space-between;
+}
+
+.menu span{
+   font-family: Rage;
+   font-size: 35.66px;
+   color: #fed136;
+}
+
+.menu nav{
+   width: 512px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.menu nav a{
+   text-decoration: none;
+   color: #fff;
+   font-size: 19.2px;
+   position: relative;
+}
+
+.menu nav a:after{
+   content: '';
+   width: 0;
+   height: 0;
+   border-left: 6px solid transparent;
+   border-right: 6px solid transparent;
+   border-top: 8px solid #fed136;
+   display: block;
+   position: absolute;
+   right: 40%; bottom: 140%;
+   transition: .3s;
+   opacity: 0;
+}
+
+.menu nav a:hover:after{
+   bottom: 120%;
+   opacity: 1;
+}
+
+.title{
+   position: absolute;
+   left: 50%; top: 50%;
+   transform: translate(-50%,-50%);
+   color: #fff;
+   text-align: center;
+}
+
+.title h1{
+   font-size: 54.86px;
+   padding: 282px 0 69px 0;
+   font-weight: normal;
+}
+
+.title h2{
+   font-size: 102.86px;
+   width: 1035px;
+   padding-bottom: 69px;
+}
+
+.title p{
+   font-size: 24.69px;
+   position: relative;
+   z-index: 5;
+}
+
+.title p:after{
+   content: '';
+   width: 330px;
+   height: 90px;
+   background-color: #fed136;
+   border-radius: 5px;
+   display: block;
+   position: absolute;
+   left: 50%; top: 50%;
+   transform: translate(-50%,-50%);
+   z-index: 3;
+}
+
+.title p a{
+   text-decoration: none;
+   color: #fff;
+   position: relative;
+   transition: .5s;
+}
+
+main{
+   padding: 165px 316px 69px;
+}
+
+.sub_title{
+   text-align: center;
+}
+
+.sub_title h3{
+   font-size: 54.86px;
+   color: #000;
+}
+
+.sub_title p{
+   font-size: 21.94px;
+   color: #777777;
+}

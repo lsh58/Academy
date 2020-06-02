@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+   
+   
+    <div class="g1"></div>
+    <div class="g2"></div>
+    <div class="g3"></div>
+    
+    
+    
+    
+    <style>
+        div{width:1000px; height:200px;}
+        .g1{
+            background:linear-gradient(to top,#f00,#000);
+        }
+        .g2{
+            background:radial-gradient(#f00,#000);
+            /*
+                circle, ellipse
+                at 30% 20%,
+                farthest-corner, farthest-side, closest-corner, closest-side
+            */
+            width:400px; height:400px;
+        }
+        .g3{
+            background:conic-gradient(from 0deg,#f00 1%,#000 0%);
+            width:200px; height:200px;
+            /*from 0deg at 0% 0%*/
+        }
+    </style>
+   
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        svg g:nth-of-type(1) path {
+            stroke-dasharray: 1100px;
+            animation: a 10s infinite;
+        }
+
+        svg g:nth-of-type(2) path {
+            stroke-dasharray: 1100px;
+            animation: a 10s infinite;
+        }
+
+        @keyframes a {
+            0% {
+                stroke-dashoffset: 1100px;
+            }
+
+            100% {
+                stroke-dashoffset: 0px;
+            }
+        }
+    </style>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="217.922px" height="224.411px" viewBox="0 0 217.922 224.411" enable-background="new 0 0 217.922 224.411"
+        xml:space="preserve">
+        <g id="Layer_1">
+            <path fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" d="M52.73,29.809l-24.5,3.814l-4.5,15.513l-21,4.578
+   c0,0-10.25,98.164,106,167.845c0,0,105.334-53,106.667-168.667l-22-4l-6-16l-24.333-3.083l-4.667-16.25l-49.667-11l-51,11
+   L52.73,29.809z" />
+        </g>
+        <g id="Layer_2">
+            <path fill="none" stroke="#000000" stroke-width="5" stroke-miterlimit="10" d="M128.895,39.331l-1.75,145.75
+   c0,0,84.25-61,38.5-82.5c0,0-9.75-3.75-21.5,3.25C144.145,105.831,247.395,75.331,128.895,39.331z" />
+        </g>
+    </svg>
+</body>
+
+</html>

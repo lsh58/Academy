@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="svg1">
+        <img src="../../img/p_01.jpg" class="svg1">
+    </div>
+
+    <style>
+        .svg1 {
+            clip-path: circle(50% at 50% 50%);
+            animation: clip 1s infinite alternate;
+            width: 500px;
+            height: 500px;
+        }
+
+        @keyframes clip {
+            0% {
+                clip-path: circle(50% at 50% 50%);
+            }
+
+            100% {
+                clip-path: circle(10% at 10% 10%);
+            }
+        }
+    </style>
+    <!--   https://bennettfeely.com/clippy/-->
+</body>
+
+</html>
